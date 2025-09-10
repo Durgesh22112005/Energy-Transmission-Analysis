@@ -1,0 +1,12 @@
+.flash-bg {
+  animation: flashRed 1s infinite alternate;
+}
+
+@keyframes flashRed {
+  0% {
+    background-color: #7f1d1d;
+  }
+  100% {
+    background-color: #dc2626;
+  }
+}
