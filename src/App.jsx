@@ -17,7 +17,7 @@ const App = () => {
   const [systemStatus] = useState("Normal");
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 text-white">
+    <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50 text-stone-900">
       <Navigation currentScreen={currentScreen} setCurrentScreen={setCurrentScreen} alerts={alerts} />
 
       {currentScreen === "home" && (

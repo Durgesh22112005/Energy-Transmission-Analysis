@@ -4,31 +4,31 @@ import { Wifi, WifiOff, CheckCircle, AlertTriangle, AlertCircle } from "lucide-r
 const getStatusColor = (status) => {
   switch (status) {
     case "Normal":
-      return "text-green-400 bg-green-400/10 border-green-400/20";
+      return "text-green-700 bg-green-50 border-green-300";
     case "Warning":
-      return "text-yellow-400 bg-yellow-400/10 border-yellow-400/20";
+      return "text-amber-700 bg-amber-50 border-amber-300";
     case "Fault":
-      return "text-red-400 bg-red-400/10 border-red-400/20";
+      return "text-red-700 bg-red-50 border-red-300";
     default:
-      return "text-gray-400 bg-gray-400/10 border-gray-400/20";
+      return "text-stone-700 bg-stone-50 border-stone-300";
   }
 };
 
 const StatusHero = ({ isOnline, systemStatus }) => {
   return (
-    <div className="relative overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-3xl p-8">
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-600/5 to-purple-600/5"></div>
+    <div className="relative overflow-hidden bg-amber-50/80 backdrop-blur-xl border border-orange-200 rounded-3xl p-8 shadow-lg">
+      <div className="absolute inset-0 bg-gradient-to-r from-orange-50/50 to-red-50/50"></div>
       <div className="relative z-10">
         <div className="flex items-center justify-between mb-6">
           <div>
-            <h2 className="text-3xl font-bold text-white mb-2">System Status</h2>
-            <p className="text-slate-400">Real-time transmission line monitoring</p>
+            <h2 className="text-3xl font-bold text-stone-900 mb-2">System Status</h2>
+            <p className="text-stone-600">Real-time transmission line monitoring</p>
           </div>
           <div
             className={`flex items-center space-x-2 px-4 py-2 rounded-full border ${
               isOnline
-                ? "text-green-400 bg-green-400/10 border-green-400/20"
-                : "text-red-400 bg-red-400/10 border-red-400/20"
+                ? "text-green-700 bg-green-50 border-green-300"
+                : "text-red-700 bg-red-50 border-red-300"
             }`}
           >
             {isOnline ? <Wifi className="w-4 h-4" /> : <WifiOff className="w-4 h-4" />}
@@ -55,3 +55,4 @@ const StatusHero = ({ isOnline, systemStatus }) => {
 };
 
 export default StatusHero;
+

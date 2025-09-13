@@ -4,27 +4,27 @@ import { Bell, Clock } from "lucide-react";
 const getAlertColor = (severity) => {
   switch (severity) {
     case "high":
-      return "bg-red-500/10 border-red-500/20 text-red-400";
+      return "bg-red-50 border-red-300 text-red-800";
     case "medium":
-      return "bg-yellow-500/10 border-yellow-500/20 text-yellow-400";
+      return "bg-amber-50 border-amber-300 text-amber-800";
     case "low":
-      return "bg-blue-500/10 border-blue-500/20 text-blue-400";
+      return "bg-orange-50 border-orange-300 text-orange-800";
     default:
-      return "bg-gray-500/10 border-gray-500/20 text-gray-400";
+      return "bg-stone-50 border-stone-300 text-stone-800";
   }
 };
 
 const AlertsList = ({ alerts, setCurrentScreen }) => {
   return (
-    <div className="bg-gradient-to-br from-slate-800/50 to-slate-900/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl p-6">
+    <div className="bg-amber-50/80 backdrop-blur-xl border border-orange-200 rounded-2xl p-6 shadow-lg">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="text-xl font-bold text-white flex items-center">
-          <Bell className="w-5 h-5 mr-2 text-yellow-400" />
+        <h3 className="text-xl font-bold text-stone-900 flex items-center">
+          <Bell className="w-5 h-5 mr-2 text-red-500" />
           Recent Alerts
         </h3>
         <button
           onClick={() => setCurrentScreen("alerts")}
-          className="text-blue-400 hover:text-blue-300 transition-colors font-medium"
+          className="text-orange-600 hover:text-red-600 transition-colors font-medium"
         >
           View All
         </button>
@@ -43,10 +43,10 @@ const AlertsList = ({ alerts, setCurrentScreen }) => {
               <div
                 className={`px-2 py-1 rounded-full text-xs font-medium ${
                   alert.severity === "high"
-                    ? "bg-red-500/20 text-red-300"
+                    ? "bg-red-100 text-red-800"
                     : alert.severity === "medium"
-                    ? "bg-yellow-500/20 text-yellow-300"
-                    : "bg-blue-500/20 text-blue-300"
+                    ? "bg-amber-100 text-amber-800"
+                    : "bg-orange-100 text-orange-800"
                 }`}
               >
                 {alert.severity}
